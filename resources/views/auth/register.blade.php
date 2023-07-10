@@ -25,7 +25,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
+                        <!-- <div class="row mb-3">
                             <label for="tgl_lhr" class="col-md-4 col-form-label text-md-end">{{ __('Tanggal Lahir') }}</label>
 
                             <div class="col-md-6">
@@ -37,7 +37,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="row mb-3">
                             <label for="telp" class="col-md-4 col-form-label text-md-end">{{ __('No Telepon') }}</label>
