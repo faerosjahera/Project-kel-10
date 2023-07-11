@@ -1,11 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\MenuController;
-use app\Http\Controllers\Detail_MenuController;
-use app\Http\Controllers\PengirimanController;
+use App\Http\Controllers\Detail_MenuController;
+use App\Http\Controllers\PengirimanController;
+use App\Http\Controllers\CodController;
+use App\Http\Controllers\EwalletController;
 
 
 /*
@@ -22,6 +26,22 @@ use app\Http\Controllers\PengirimanController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('User', UserController::class);
+Route::get('User', [UserController::class, 'index'])->name('User.index');
+Route::get('User/create', [UserController::class, 'create'])->name('User.create');
+Route::post('User', [UserController::class, 'store'])->name('User.store');
+Route::get('User/{id}/edit', [UserController::class, 'edit'])->name('User.edit');
+Route::put('User/{id}', [UserController::class, 'update'])->name('User.update');
+Route::delete('User/{id}', [UserController::class, 'destroy'])->name('User.destroy');
+
+Route::resource('Role', RoleController::class);
+Route::get('Role', [RoleController::class, 'index'])->name('Role.index');
+Route::get('Role/create', [RoleController::class, 'create'])->name('Role.create');
+Route::post('Role', [RoleController::class, 'store'])->name('Role.store');
+Route::get('Role/{id}/edit', [RoleController::class, 'edit'])->name('Role.edit');
+Route::put('Role/{id}', [RoleController::class, 'update'])->name('Role.update');
+Route::delete('Role/{id}', [RoleController::class, 'destroy'])->name('Role.destroy');
 
 Route::resource('Pemesanan', PemesananController::class);
 Route::get('Pemesanan', [PemesananController::class, 'index'])->name('Pemesanan.index');
@@ -62,6 +82,22 @@ Route::post('Pengiriman', [PengirimanController::class, 'store'])->name('Pengiri
 Route::get('Pengiriman/{id}/edit', [PengirimanController::class, 'edit'])->name('Pengiriman.edit');
 Route::put('Pengiriman/{id}', [PengirimanController::class, 'update'])->name('Pengiriman.update');
 Route::delete('Pengiriman/{id}', [PengirimanController::class, 'destroy'])->name('Pengiriman.destroy');
+
+Route::resource('Cod', CodController::class);
+Route::get('Cod', [CodController::class, 'index'])->name('Cod.index');
+Route::get('Cod/create', [CodController::class, 'create'])->name('Cod.create');
+Route::post('Cod', [CodController::class, 'store'])->name('Cod.store');
+Route::get('Cod/{id}/edit', [CodController::class, 'edit'])->name('Cod.edit');
+Route::put('Cod/{id}', [CodController::class, 'update'])->name('Cod.update');
+Route::delete('Cod/{id}', [CodController::class, 'destroy'])->name('Cod.destroy');
+
+Route::resource('Ewallet', EwalletController::class);
+Route::get('Ewallet', [EwalletController::class, 'index'])->name('Ewallet.index');
+Route::get('Ewallet/create', [EwalletController::class, 'create'])->name('Ewallet.create');
+Route::post('Ewallet', [EwalletController::class, 'store'])->name('Ewallet.store');
+Route::get('Ewallet/{id}/edit', [EwalletController::class, 'edit'])->name('Ewallet.edit');
+Route::put('Ewallet/{id}', [EwalletController::class, 'update'])->name('Ewallet.update');
+Route::delete('Ewallet/{id}', [EwalletController::class, 'destroy'])->name('Ewallet.destroy');
 
 Auth::routes();
 
