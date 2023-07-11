@@ -5,6 +5,8 @@ use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\MenuController;
 use app\Http\Controllers\Detail_MenuController;
+use app\Http\Controllers\PengirimanController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -53,13 +55,21 @@ Route::get('Menu/{id}/edit', [MenuController::class, 'edit'])->name('Menu.edit')
 Route::put('Menu/{id}', [MenuController::class, 'update'])->name('Menu.update');
 Route::delete('Menu/{id}', [MenuController::class, 'destroy'])->name('Menu.destroy');
 
-Route::resource('Detail_Menu', MenuController::class);
-Route::get('Menu', [MenuController::class, 'index'])->name('Menu.index');
-Route::get('Menu/create', [MenuController::class, 'create'])->name('Menu.create');
-Route::post('Menu', [MenuController::class, 'store'])->name('Menu.store');
-Route::get('Menu/{id}/edit', [MenuController::class, 'edit'])->name('Menu.edit');
-Route::put('Menu/{id}', [MenuController::class, 'update'])->name('Menu.update');
-Route::delete('Menu/{id}', [MenuController::class, 'destroy'])->name('Menu.destroy');
+Route::resource('Detail_Menu', Detail_MenuController::class);
+Route::get('Detail_Menu', [Detail_MenuController::class, 'index'])->name('Detail_Menu.index');
+Route::get('Detail_Menu/create', [Detail_MenuController::class, 'create'])->name('Detail_Menu.create');
+Route::post('Detail_Menu', [Detail_MenuController::class, 'store'])->name('Detail_Menu.store');
+Route::get('Detail_Menu/{id}/edit', [Detail_MenuController::class, 'edit'])->name('Detail_Menu.edit');
+Route::put('Detail_Menu/{id}', [Detail_MenuController::class, 'update'])->name('Detail_Menu.update');
+Route::delete('Detail_Menu/{id}', [Detail_MenuController::class, 'destroy'])->name('Detail_Menu.destroy');
+
+Route::resource('Pengiriman', PengirimanController::class);
+Route::get('Pengiriman', [PengirimanController::class, 'index'])->name('Pengiriman.index');
+Route::get('Pengiriman/create', [PengirimanController::class, 'create'])->name('Pengiriman.create');
+Route::post('Pengiriman', [PengirimanController::class, 'store'])->name('Pengiriman.store');
+Route::get('Pengiriman/{id}/edit', [PengirimanController::class, 'edit'])->name('Pengiriman.edit');
+Route::put('Pengiriman/{id}', [PengirimanController::class, 'update'])->name('Pengiriman.update');
+Route::delete('Pengiriman/{id}', [PengirimanController::class, 'destroy'])->name('Pengiriman.destroy');
 
 Auth::routes();
 
