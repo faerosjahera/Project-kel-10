@@ -22,14 +22,6 @@ use app\Http\Controllers\PengirimanController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', function () {
-    return view ('home');
-});
-
-Route::get('/page', function () {
-    return view ('page');
-});
-
 
 Route::resource('Pemesanan', PemesananController::class);
 Route::get('Pemesanan', [PemesananController::class, 'index'])->name('Pemesanan.index');
