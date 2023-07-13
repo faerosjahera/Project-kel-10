@@ -12,7 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pembayaran', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_transaksi');
+            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('id_pesan');
+            $table->date('tgl_pesan');
+            $table->date('tgl_bayar');
+            $table->float('total_bayar',8,2);
+            $table->boolean('kode_promo');
+
             $table->timestamps();
         });
     }
