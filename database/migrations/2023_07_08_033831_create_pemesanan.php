@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detail_menu', function (Blueprint $table) {
-            $table->id();
+        Schema::create('pemesanan', function (Blueprint $table) {
+            $table->id('id_pesan');
             $table->timestamps();
+            $table->unsignedBigInteger('id_user');
+            $table->date('tgl_pesan');
         });
     }
 
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('detail_menu');
+        Schema::dropIfExists('pemesanan');
     }
 };
