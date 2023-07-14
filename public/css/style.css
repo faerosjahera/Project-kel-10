@@ -6,8 +6,13 @@ body {
   overflow-x: hidden;
 }
 
+.bg_login {
+  /* background-color: #0c0c0c; */
+  min-height: 100vh;
+}
+
 .layout_padding {
-  padding: 90px 0;
+  padding: 90apx 0;
 }
 
 .layout_padding2 {
@@ -162,7 +167,7 @@ a:focus {
 }
 
 .custom_nav-container .navbar-nav {
-  padding-left: 18%;
+  padding-left: 3%;
 }
 
 .custom_nav-container .navbar-nav .nav-item .nav-link {
@@ -202,7 +207,7 @@ a:focus {
 }
 
 .user_option a {
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 .user_option .user_link {
