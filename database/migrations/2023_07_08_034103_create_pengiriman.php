@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('alamat_kirim');
             $table->boolean('stts_kirim');
             $table->timestamps();
+
+            $table->foreign('id_transaksi')->references('id_transaksi')->on('pembayaran');
+
         });
     }
 
