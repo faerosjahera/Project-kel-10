@@ -24,7 +24,7 @@ use App\Http\Controllers\EwalletController;
 */
 
 Route::get('/', function () {
-    return view ('welcome');
+    return view ('homerev');
 });
 
 Route::resource('User', UserController::class);

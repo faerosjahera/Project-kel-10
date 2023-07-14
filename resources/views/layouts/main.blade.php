@@ -43,10 +43,6 @@
         @yield('container')
         </div>
 
-  @include ('passwords.login')  
-        <div class="container"> 
-          @yield('container')
-
   @include ('layouts.footer')
 
     
