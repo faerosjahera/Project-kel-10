@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('notelp');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('id_role')->references('id_role')->on('role');
         });
     }
 

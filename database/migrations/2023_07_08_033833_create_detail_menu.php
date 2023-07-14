@@ -17,6 +17,10 @@ return new class extends Migration
             $table->integer('jumlah_pesan');
             $table->decimal('harga_item',10,2);
             $table->timestamps();
+
+
+            $table->foreign('id_menu')->references('id_menu')->on('menu');
+            $table->foreign('id_pesan')->references('id_pesan')->on('pemesanan');
         });
     }
 
