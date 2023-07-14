@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Ewallet extends Model
 {
     use HasFactory;
+    protected $table="ewallet";
+    protected $primaryKey="id_ewallets";
+    protected $fillable=[
+        'nama_menu'
+    ];
 }
