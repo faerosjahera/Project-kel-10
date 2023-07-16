@@ -12,9 +12,9 @@ class PemesananController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index():Response
+    public function index()
     {
-        dd('index');
+        return view('pemesanan.index');;
     }
 
 
