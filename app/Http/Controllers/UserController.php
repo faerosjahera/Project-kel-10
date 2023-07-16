@@ -2,39 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+//use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
+
 class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index()
     {
-    dd('index');
+        return view('auth.register');
+;
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): Response
+    public function create()
     {
-    dd ('create');
+        return view('auth.register');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request):RedirectResponse
+    public function store(Request $request)
     {
-    dd('store');
+        $data = [
+            'name'=>$request->name,
+            'telp'=>$request->telp,
+            'email'=>$request->email,
+            'password'=>$request->password
+        ];
+
+        User::create($data);
     }
 
-
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id): Response
     {
     dd('show');
