@@ -74,7 +74,7 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="User">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="User/create">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else

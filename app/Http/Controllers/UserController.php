@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('auth.register');
+        // return view('auth.register');
 ;
     }
 
@@ -40,11 +40,12 @@ class UserController extends Controller
         ];
 
         User::create($data);
+        return redirect()->to('tes');
     }
 
-    public function show(string $id): Response
+    public function show(string $id)
     {
-    dd('show');
+    return 'hi';
     }
     /**
      * Show the form for editing the specified resource.
