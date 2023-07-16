@@ -16,8 +16,6 @@ return new class extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('id_user');
             $table->date('tgl_pesan');
-
-            $table->foreign('id_user')->references('id_user')->on('users');
         });
     }
 

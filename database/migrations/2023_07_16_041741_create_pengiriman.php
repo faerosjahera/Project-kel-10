@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_transaksi');
             $table->string('alamat_kirim');
             $table->boolean('stts_kirim');
+            $table->enum('metode_bayar',['ewallet','cod']);
             $table->timestamps();
 
             $table->foreign('id_transaksi')->references('id_transaksi')->on('pembayaran');

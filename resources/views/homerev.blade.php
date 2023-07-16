@@ -797,7 +797,7 @@
       <!-- end about section -->
     
       <!-- book section -->
-      <section class="book_section layout_padding">
+      <!-- <section class="book_section layout_padding">
         <div class="container">
           <div class="heading_container">
             <h2>
@@ -854,12 +854,12 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- end book section -->
     
       <!-- client section -->
     
-      <section class="client_section layout_padding-bottom">
+      <!-- <section class="client_section layout_padding-bottom">
         <div class="container">
           <div class="heading_container heading_center psudo_white_primary mb_45">
             <h2>
@@ -908,7 +908,7 @@
           </div>
         </div>
       </section>
-    
+     -->
       <!-- end client section -->
       
  @include ('layouts.footer')

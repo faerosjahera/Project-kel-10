@@ -27,6 +27,14 @@ Route::get('/', function () {
     return view ('homerev');
 });
 
+Route::get('/homelogin', function () {
+    return view ('homelogin');
+});
+
+Route::get('/nav', function () {
+    return view ('nav');
+});
+
 Route::resource('User', UserController::class);
 Route::get('User', [UserController::class, 'index'])->name('User.index');
 Route::get('User/create', [UserController::class, 'create'])->name('User.create');
