@@ -27,6 +27,10 @@ Route::get('/', function () {
     return view ('homerev');
 });
 
+Route::get('/tes', function () {
+    return view ('homerev');
+});
+
 Route::get('/homelogin', function () {
     return view ('homelogin');
 });
@@ -38,7 +42,7 @@ Route::get('/nav', function () {
 Route::resource('User', UserController::class);
 Route::get('User', [UserController::class, 'index'])->name('User.index');
 Route::get('User/create', [UserController::class, 'create'])->name('User.create');
-Route::post('User', [UserController::class, 'store'])->name('User.store');
+Route::post('user', [UserController::class, 'store'])->name('User.store');
 Route::get('User/{id}/edit', [UserController::class, 'edit'])->name('User.edit');
 Route::put('User/{id}', [UserController::class, 'update'])->name('User.update');
 Route::delete('User/{id}', [UserController::class, 'destroy'])->name('User.destroy');
