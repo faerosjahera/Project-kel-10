@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pengiriman', function (Blueprint $table) {
             $table->id('id_pengiriman');
-            $table->unsignedBigInteger('id_transaksi');
+            $table->foreignId('id_transaksi');
             $table->string('alamat_kirim');
             $table->boolean('stts_kirim');
             $table->enum('metode_bayar',['ewallet','cod']);

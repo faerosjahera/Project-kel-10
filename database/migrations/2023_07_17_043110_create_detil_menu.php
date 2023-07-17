@@ -11,19 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pembayaran', function (Blueprint $table) {
-            $table->id('id_transaksi');
-            $table->unsignedBigInteger('id_user');
+        Schema::create('detail_menu', function (Blueprint $table) {
+            $table->unsignedBigInteger('id_menu');
             $table->unsignedBigInteger('id_pesan');
-            $table->date('tgl_pesan');
-            $table->date('tgl_bayar');
-            $table->float('total_bayar',8,2);
-            $table->boolean('kode_promo');
+            $table->integer('jumlah_pesan');
+            $table->decimal('harga_item',10,2);
             $table->timestamps();
 
-            $table->foreign('id_user')->references('id_user')->on('users');
+
+            $table->foreign('id_menu')->references('id_menu')->on('menu');
             $table->foreign('id_pesan')->references('id_pesan')->on('pemesanan');
         });
+
     }
 
     /**
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pembayaran');
+        Schema::dropIfExists('detil_menu');
     }
 };

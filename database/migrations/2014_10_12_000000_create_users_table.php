@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id('id_user');
-            $table->unsignedBigInteger('id_role');
+            $table->foreignId('id_role');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -24,6 +24,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('id_role')->references('id_role')->on('role');
+            // $constraint ->(`id_role`)-> foreignkey (`id_role`)-> references ('role');
         });
     }
 

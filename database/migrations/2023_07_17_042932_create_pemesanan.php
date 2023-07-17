@@ -10,11 +10,11 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
+    { 
         Schema::create('pemesanan', function (Blueprint $table) {
             $table->id('id_pesan');
             $table->timestamps();
-            $table->unsignedBigInteger('id_user');
+            $table->foreignId('id_user');
             $table->date('tgl_pesan');
         });
     }
