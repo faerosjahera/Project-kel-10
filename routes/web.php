@@ -65,7 +65,7 @@ Route::delete('Role/{id}', [RoleController::class, 'destroy'])->name('Role.destr
 
 Route::resource('Pemesanan', PemesananController::class);
 Route::get('Pemesanan', [PemesananController::class, 'index'])->name('Pemesanan.index');
-Route::get('Pemesanan/create', [PemesananController::class, 'create'])->name('Pemesanan.create');
+Route::get('Pemesanan/Create', [PemesananController::class, 'create'])->name('Pemesanan.create');
 Route::post('Pemesanan', [PemesananController::class, 'store'])->name('Pemesanan.store');
 Route::get('Pemesanan/{id}/edit', [PemesananController::class, 'edit'])->name('Pemesanan.edit');
 Route::put('Pemesanan/{id}', [PemesananController::class, 'update'])->name('Pemesanan.update');
