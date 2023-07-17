@@ -45,7 +45,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg custom_nav-container">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/">
               <span>
                 Wekdi
               </span>

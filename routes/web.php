@@ -39,6 +39,14 @@ Route::get('/nav', function () {
     return view ('nav');
 });
 
+Route::get('/menu', function () {
+    return view ('menu');
+});
+
+Route::get('/promo', function () {
+    return view ('penawaran');
+});
+
 Route::resource('User', UserController::class);
 Route::get('User', [UserController::class, 'index'])->name('User.index');
 Route::get('User/create', [UserController::class, 'create'])->name('User.create');

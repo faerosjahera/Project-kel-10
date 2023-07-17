@@ -8,7 +8,7 @@
     <header class="header_section">
         <div class="container">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
               <span>
                 Wekdi
               </span>
@@ -24,10 +24,10 @@
                   <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="menu.html">Menu</a>
+                  <a class="nav-link" href="menu">Menu</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html">Penawaran </a>
+                  <a class="nav-link" href="promo">Penawaran </a>
                 </li>
                 {{-- <li class="nav-item">
                   <a class="nav-link" href="book.html">Book Table</a>
