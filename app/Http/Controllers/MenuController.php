@@ -13,7 +13,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-     $menus = Menu::latest()->get();
+     $menus = Menu::OrderBy('nama_menu','desc')->get();
      return view('menu.index', compact('menus'));
     }
     public function create()
@@ -23,8 +23,7 @@ class MenuController extends Controller
     public function store(Request $request)
     {
      Menu::create([
-        'nama_menu' => $request->get('nama_menu')
-     ]);
+        'nama_menu' => $request->get('nama_menu')]);
      return redirect()->back()->with('message','Menu berhasil di tambahkan');
 
     }
@@ -32,9 +31,9 @@ class MenuController extends Controller
     {
     dd('show');
     }
-    public function edit(string $id): Response
+    public function edit(string $id)
     {
-    dd('edit');
+        return "Hi";
     }
     public function update(Request $request, string $id): RedirectResponse
     {
