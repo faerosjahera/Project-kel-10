@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
@@ -11,17 +11,22 @@ class MenuController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
-{
-    dd('index');
-    }
-    public function create(): Response
+    public function index()
     {
-    dd('create');
+     $menus = Menu::latest()->get();
+     return view('menu.index', compact('menus'));
     }
-    public function store(Request $request): RedirectResponse
+    public function create()
     {
-    dd('store');
+        return view('menu.create');
+    }
+    public function store(Request $request)
+    {
+     Menu::create([
+        'nama_menu' => $request->get('nama_menu')
+     ]);
+     return redirect()->back()->with('message','Menu berhasil di tambahkan');
+
     }
     public function show(string $id): Response
     {
