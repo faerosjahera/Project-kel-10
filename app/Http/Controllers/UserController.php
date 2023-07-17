@@ -45,7 +45,7 @@ class UserController extends Controller
 
     public function show(string $id)
     {
-    return 'hi';
+    return view ('homerev');
     }
     /**
      * Show the form for editing the specified resource.
