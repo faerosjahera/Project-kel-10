@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('detail_menu', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_menu');
-            $table->unsignedBigInteger('id_pesan');
+            $table->foreignId('id_menu');
+            $table->foreignId('id_pesan');
             $table->integer('jumlah_pesan');
             $table->decimal('harga_item',10,2);
             $table->timestamps();
