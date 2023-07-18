@@ -11,17 +11,18 @@
                     {{ Session::get('message') }}
                 </div>
                 @endif
-                <form action="{{route('Menu.store')}}" method="post">
+                <form action="{{route('Menu.update',[$menu->id_menu])}}" method="post">
                     @csrf
+                    {{ method_field('PUT')}}
             <div class="card">
-
-                <div class="card-header">All Menu</div>
+                <div class="card-header">Update Menu</div>
 
                 <div class="card-body">
                     <div class = "form-group">
                         <label for="nama_menu">Menu</label>
-                        <input type="text" name="nama_menu" class="form-control @error('nama_menu') is-invalid @enderror">
-
+                        <input type="text" name="nama_menu" class="form-control" value="{{$menu->nama_menu}}@error('nama_menu') is-invalid @enderror"
+                        value= "{{$nama_menu->nama_menu}}">
+                        
                         @error('nama_menu')
                         <span class= "invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

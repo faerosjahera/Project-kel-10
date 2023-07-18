@@ -4,7 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
     <div class="col-md-8">
-    <div class="card">
+        @if(Session::has('message'))
+        <div class= "alert alert-success">{{Session::get('message')}}</div>
+        @endif
+        <div class="card">
         <div class="card-header">Menu</div>
         <!-- @foreach($menus as $menu)
                 <p>{{$menu->nama_menu}}</p>
@@ -26,10 +29,14 @@
                     <th scope="row">{{$key+1}}</th>
                     <td>{{$nama_menu->nama_menu}}</td>
                     <td>
-                        <a href="{{url('Menu/'.$nama_menu.'/edit')}}"><button class="btn btn-outline-success">Edit</button></a>
+                        <a href="{{route('Menu.edit',[$nama_menu->id_menu])}}"><button class="btn btn-outline-success">Edit</button></a>
                     </td>
                     <td>
-                        <a href=" "><button class= "btn btn-outline-danger">Delete</button></a>
+                        <form onsubmit="return confirm('Yakin Hapus Menu?')" action="{{route('Menu.destroy',[$nama_menu->id_menu])}}" method="post">
+                            @csrf
+                            {{ method_field('DELETE') }}
+                            <button type="submit" name="submit" class= "btn btn-outline-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
