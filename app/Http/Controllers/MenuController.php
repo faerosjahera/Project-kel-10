@@ -22,6 +22,9 @@ class MenuController extends Controller
     }
     public function store(Request $request)
     {
+
+        $this->validate($request,['nama_menu'=>'required|min:3']);
+
      Menu::create([
         'nama_menu' => $request->get('nama_menu')]);
      return redirect()->back()->with('message','Menu berhasil di tambahkan');
@@ -33,19 +36,23 @@ class MenuController extends Controller
     }
     public function edit(string $id)
     {
-        return "Hi";
+        $menu= Menu::find($id);
+        return view ('menu.edit',compact('menu'));
     }
-    public function update(Request $request, string $id): RedirectResponse
+    public function update(Request $request, string $id)
     {
-    dd('update');
+        $this->validate($request,['nama_menu'=>'required|min:3']);
+        
+        $menu = Menu::find($id);
+        $menu->nama_menu = $request->get('nama_menu');
+        $menu->save();
+        return redirect()->route('Menu.index')->with('message','Menu berhasil di update');
     }
-    
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id): RedirectResponse
+    public function destroy(string $id)
     {
-    dd('store');
+        $menu = Menu::find($id);
+        $menu->delete();
+        return redirect()->route('Menu.index')->with('message','Menu berhasil terhapus');
     }
 }
 
