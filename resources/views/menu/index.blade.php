@@ -8,16 +8,18 @@
         <div class= "alert alert-success">{{Session::get('message')}}</div>
         @endif
         <div class="card">
-        <div class="card-header">Menu</div>
+        <div class="card-header">All Menu</div>
         <!-- @foreach($menus as $menu)
                 <p>{{$menu->nama_menu}}</p>
             @endforeach -->
         <div class="card-body">
+
                 <table class="table">
                 <thead class="thead-dark">
                 <tr>
-                <th scope="col">#</th>
+                <th scope="col">Image</th>
                 <th scope="col">Nama Menu</th>
+                <th scope="col">Harga</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
                 </tr>
@@ -26,8 +28,9 @@
                 @if(count($menus)>0)
                 @foreach($menus as $key=>$nama_menu)
                 <tr>
-                    <th scope="row">{{$key+1}}</th>
-                    <td>{{$nama_menu->nama_menu}}</td>
+                    <td><img src="{{asset('image')}}/{{$menu->image}}" width="100"></td>
+                    <td>{{$menu->nama_menu}}</td>
+                    <td>{{$menu->harga}}</td>
                     <td>
                         <a href="{{route('Menu.edit',[$nama_menu->id_menu])}}"><button class="btn btn-outline-success">Edit</button></a>
                     </td>
@@ -42,11 +45,12 @@
                 @endforeach
                 @else
                 <td>
-                    Tidak ada Menu
+                    Belum ada menu
                 </td>
                 @endif
             </tbody>
             </table>
+            {{ $menus->links() }}
         </div>
     </div>
     </div>

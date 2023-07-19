@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id('id_menu');
             $table->timestamps();
             $table->string('nama_menu');
+            $table->integer('harga');
+            $table->string('image');
         });
     }
 
