@@ -15,7 +15,6 @@ return new class extends Migration
             $table->foreignId('id_menu');
             $table->foreignId('id_pesan');
             $table->integer('jumlah_pesan');
-            $table->decimal('harga_item',10,2);
             $table->timestamps();
 
 

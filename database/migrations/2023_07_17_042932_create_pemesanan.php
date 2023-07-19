@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('id_pesan');
             $table->timestamps();
             $table->foreignId('id_user');
+            $table->foreignId('id_menu');
             $table->date('tgl_pesan');
         });
     }

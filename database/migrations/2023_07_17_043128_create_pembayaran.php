@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id('id_transaksi');
             $table->foreignId('id_user');
             $table->foreignId('id_pesan');
-            $table->date('tgl_pesan');
             $table->date('tgl_bayar');
             $table->float('total_bayar',8,2);
             $table->boolean('kode_promo');

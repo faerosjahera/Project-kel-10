@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
         //    $table->date('tgl_lhr');
-            $table->string('notelp');
+            $table->string('telp');
             $table->rememberToken();
             $table->timestamps();
 
